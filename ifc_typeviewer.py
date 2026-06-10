@@ -294,7 +294,7 @@ def build_html(payload, title="IFC"):
 TEMPLATE = r"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>IFC Type Viewer</title>
 <style>
-:root{--bg:#0f1318;--panel:#171c22;--panel2:#1e242c;--line:#2a313a;--txt:#e7e3da;--txt2:#9aa1a8;--txt3:#6b7480;--accent:#5cb8ff;--fast:#6fd3a3;--ops:#e0a36f}
+:root{--bg:#f5f2ec;--panel:#ffffff;--panel2:#eeebe4;--line:#d8d4cc;--txt:#1e2530;--txt2:#4a5568;--txt3:#8896a8;--accent:#1a6fc4;--fast:#1a7a50;--ops:#b85d18}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:12px/1.45 system-ui,Segoe UI,sans-serif}
 .wrap{max-width:1850px;margin:0 auto;padding:14px 18px}
 h1{font-size:17px;margin:0;display:inline-block}.sub{color:var(--txt3);font-size:11px;margin-left:10px}
@@ -302,7 +302,7 @@ h1{font-size:17px;margin:0;display:inline-block}.sub{color:var(--txt3);font-size
 .tcmp{display:flex;gap:8px;align-items:center;font-size:12px}
 .tdot{width:9px;height:9px;border-radius:50%}
 .tval{font-variant-numeric:tabular-nums}.tval b{font-size:13px}
-.speed{font-weight:700;color:var(--fast);border:1px solid #2c5a44;background:#10301f;border-radius:10px;padding:1px 9px}
+.speed{font-weight:700;color:var(--fast);border:1px solid #a8d8c0;background:#e8f5ef;border-radius:10px;padding:1px 9px}
 .toolbar{display:flex;gap:8px;align-items:center;margin:10px 0;flex-wrap:wrap}
 .toolbar input{flex:1;min-width:200px;background:var(--panel);border:1px solid var(--line);border-radius:7px;color:var(--txt);padding:7px 10px;font:inherit}
 .toolbar select{background:var(--panel);border:1px solid var(--line);border-radius:7px;color:var(--txt);padding:7px 8px;font:inherit}
@@ -313,11 +313,11 @@ h1{font-size:17px;margin:0;display:inline-block}.sub{color:var(--txt3);font-size
 .cnt{color:var(--txt3);font-size:11px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 12px;display:flex;flex-direction:column;gap:8px}
-.card.has3d{cursor:pointer}.card.has3d:hover{border-color:#3a536f}.card.has3d:hover .d3{opacity:1}
+.card.has3d{cursor:pointer}.card.has3d:hover{border-color:#90b8d8}.card.has3d:hover .d3{opacity:1}
 .chead{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
 .tname{font-weight:600;font-size:12px;line-height:1.3;word-break:break-word}
 .ctag{display:inline-block;padding:0 6px;border-radius:4px;font-size:10px;font-weight:700;white-space:nowrap}
-.utag{display:inline-block;padding:0 6px;border-radius:4px;font-size:10px;font-weight:700;background:#3a2c0f;color:#e9be72;border:1px solid #6a4f1c;white-space:nowrap}
+.utag{display:inline-block;padding:0 6px;border-radius:4px;font-size:10px;font-weight:700;background:#fef3c7;color:#92400e;border:1px solid #d97706;white-space:nowrap}
 .thead{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
 .chk{display:inline-flex;align-items:center;gap:5px;color:var(--txt2);font-size:11px;cursor:pointer;user-select:none;padding:0 4px}
 .qto{display:flex;gap:9px;flex-wrap:wrap;font-size:11px;color:var(--txt2);font-variant-numeric:tabular-nums}
@@ -325,23 +325,23 @@ h1{font-size:17px;margin:0;display:inline-block}.sub{color:var(--txt3);font-size
 .ms{color:var(--accent)}
 .engtog{display:inline-flex;border:1px solid var(--line);border-radius:7px;overflow:hidden;font-size:10px}
 .engtog span{padding:1px 7px;cursor:pointer;color:var(--txt3);font-weight:700}
-.engtog span.fast.on{background:#10301f;color:var(--fast)}.engtog span.ops.on{background:#33240f;color:var(--ops)}
+.engtog span.fast.on{background:#e5f5ed;color:var(--fast)}.engtog span.ops.on{background:#fdf0e5;color:var(--ops)}
 .sand{display:flex;height:42px;border-radius:6px;overflow:hidden;border:1px solid #000}
 .sl{position:relative;min-width:3px;display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(0,0,0,.35)}
 .sl span{font-size:9px;color:rgba(0,0,0,.7);font-weight:700}
-.gfx{height:96px;background:#0c1014;border-radius:6px;border:1px solid #000;display:block;position:relative}
-.d3{position:absolute;top:6px;right:6px;font-size:9px;font-weight:800;color:#cfe6ff;background:#16263acc;border:1px solid #29456b;border-radius:6px;padding:1px 6px;opacity:.85;pointer-events:none;z-index:2}
+.gfx{height:96px;background:#ece8e0;border-radius:6px;border:1px solid var(--line);display:block;position:relative}
+.d3{position:absolute;top:6px;right:6px;font-size:9px;font-weight:800;color:#1e3a5a;background:rgba(210,225,245,.92);border:1px solid #90adc8;border-radius:6px;padding:1px 6px;opacity:.85;pointer-events:none;z-index:2}
 .leg{display:flex;flex-direction:column;gap:2px}
 .lr{display:flex;align-items:center;gap:6px;font-size:11px}
 .sw{width:10px;height:10px;border-radius:2px;flex:0 0 auto}
 .lr .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lr .v{color:var(--txt3);font-variant-numeric:tabular-nums}
 .empty{color:var(--txt3);font-size:11px}
-.ov{position:fixed;inset:0;background:rgba(6,9,12,.78);display:none;align-items:center;justify-content:center;z-index:50}
+.ov{position:fixed;inset:0;background:rgba(30,37,48,.55);display:none;align-items:center;justify-content:center;z-index:50}
 .ov.on{display:flex}
 .ovbox{background:var(--panel);border:1px solid var(--line);border-radius:12px;width:min(760px,94vw);height:min(600px,90vh);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.55)}
 .ovhead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;border-bottom:1px solid var(--line);font-weight:600;font-size:12px}
 .ovhead .btn{padding:4px 10px}
-#ovc{flex:1;display:block;width:100%;min-height:0;background:#0a0d11;cursor:grab}#ovc:active{cursor:grabbing}
+#ovc{flex:1;display:block;width:100%;min-height:0;background:#e8e4dc;cursor:grab}#ovc:active{cursor:grabbing}
 .ovfoot{padding:8px 12px;border-top:1px solid var(--line);color:var(--txt2);font-size:11px;display:flex;gap:14px;flex-wrap:wrap}
 </style></head><body><div class="wrap">
 <h1>IFC Type Viewer</h1><span class="sub" id="sub"></span>
@@ -365,7 +365,7 @@ const $=s=>document.querySelector(s);
 const fmt=n=>(n==null?'':typeof n==="number"?n.toLocaleString("en-US",{maximumFractionDigits:2}):n);
 const esc=s=>String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
 function hcol(s,sat,lig){let h=0;s=String(s||"");for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return `hsl(${h%360},${sat}%,${lig}%)`;}
-const matColor=s=>hcol(s,42,52);
+const matColor=s=>hcol(s,48,68);
 const EC={ifcfast:'fast',ifcopenshell:'ops'};
 const ECOL={ifcfast:'#6fd3a3',ifcopenshell:'#e0a36f'};
 const key=r=>r.cls+'|'+r.type;
@@ -410,13 +410,13 @@ function render(){
  shown=rows.slice(0,400);
  $("#grid").innerHTML=shown.map((r,i)=>{
   const d=dataOf(r);
-  const cc=hcol(r.cls,38,24),ct=hcol(r.cls,55,72);
+  const cc=hcol(r.cls,60,88),ct=hcol(r.cls,70,28);
   const nm=r.untyped?'(untyped)':(r.type||r.name||'<no type>');
   const d3=d.mesh3d?`<span class="d3">⤢ 3D</span>`:"";
   let gfx="",leg="";
   if(r.graphic==="layer"){gfx=sandwich(r.layers);leg=legend(r.layers);}
-  else if(d.mesh){gfx=meshSVG(d.mesh,hcol(r.cls,45,60));if(r.layers&&r.layers.length)leg=legend(r.layers);}
-  else{gfx=`<div class="gfx" style="display:flex;align-items:center;justify-content:center;color:#39424d">no mesh</div>`;if(r.layers&&r.layers.length)leg=legend(r.layers);}
+  else if(d.mesh){gfx=meshSVG(d.mesh,hcol(r.cls,55,52));if(r.layers&&r.layers.length)leg=legend(r.layers);}
+  else{gfx=`<div class="gfx" style="display:flex;align-items:center;justify-content:center;color:var(--txt3)">no mesh</div>`;if(r.layers&&r.layers.length)leg=legend(r.layers);}
   const vol=d.vol>0?`<span><b>${fmt(d.vol)}</b> m³</span>`:"";
   const area=d.area>0?`<span><b>${fmt(d.area)}</b> m²</span>`:"";
   const vpu=d.vol>0?`<span>${fmt(d.vpu)} m³/stk</span>`:"";
@@ -454,13 +454,13 @@ const THREE=await import(_tURL);
 const {OrbitControls}=await import(_oURL);
 let rnd,scene,cam,ctr,curMesh,grid,raf;
 const ov=document.getElementById('ov'),ovc=document.getElementById('ovc'),ovt=document.getElementById('ovt'),ovf=document.getElementById('ovf');
-function clsColor(s){let h=0;s=String(s||"");for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;const c=new THREE.Color();c.setHSL((h%360)/360,0.45,0.62);return c;}
+function clsColor(s){let h=0;s=String(s||"");for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;const c=new THREE.Color();c.setHSL((h%360)/360,0.55,0.52);return c;}
 function init(){
  rnd=new THREE.WebGLRenderer({canvas:ovc,antialias:true}); rnd.setPixelRatio(Math.min(2,window.devicePixelRatio||1));
- scene=new THREE.Scene(); scene.background=new THREE.Color(0x0a0d11);
+ scene=new THREE.Scene(); scene.background=new THREE.Color(0xe8e4dc);
  cam=new THREE.PerspectiveCamera(45,1,1e-3,1e5);
  ctr=new OrbitControls(cam,ovc); ctr.enableDamping=true; ctr.dampingFactor=0.08;
- scene.add(new THREE.HemisphereLight(0xcfe0ff,0x202833,1.0));
+ scene.add(new THREE.HemisphereLight(0xffffff,0xc8c0b0,1.2));
  const d=new THREE.DirectionalLight(0xffffff,1.5); d.position.set(1,1.6,1.2); scene.add(d);
  const d2=new THREE.DirectionalLight(0x8da9d8,0.6); d2.position.set(-1.2,-0.4,-1); scene.add(d2);
 }
@@ -482,7 +482,7 @@ window.openMesh3D=function(r,d,eng){
  const dist=rad/Math.sin(Math.PI*45/360)*1.25;
  cam.near=Math.max(1e-3,rad/200); cam.far=rad*200; cam.updateProjectionMatrix();
  cam.position.set(dist*0.85,dist*0.6,dist*0.95); ctr.target.set(0,0,0); ctr.update();
- grid=new THREE.GridHelper(rad*4,16,0x32404f,0x1c232b); grid.position.y=-rad; scene.add(grid);
+ grid=new THREE.GridHelper(rad*4,16,0xa8a098,0xc8c2b8); grid.position.y=-rad; scene.add(grid);
  ovf.textContent=`${m3.f.length/3} faces · ${m3.v.length/3} pts · ${r.n} instances · ${d.vol>0?d.vol.toLocaleString('en-US',{maximumFractionDigits:2})+' m³':''} · ${d.t_ms!=null?d.t_ms+' ms':''} · drag=rotate · scroll=zoom · right-drag=pan`;
  ov.classList.add('on'); resize(); loop();
 };

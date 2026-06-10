@@ -61,7 +61,7 @@ WIDTH_FULL = "<style>.block-container{max-width:1640px;}</style>"
 
 
 @st.cache_data(show_spinner=False)
-def process(data: bytes, name: str, engines: tuple, simplified: bool, cap: int):
+def process(data: bytes, name: str, engines: tuple, simplified: bool, cap: int, v: int = 2):
     """Cached so toggles/reruns don't re-mesh unless inputs change."""
     tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".ifc")
     try:
@@ -76,6 +76,8 @@ ENGINE_OPTS = {"ifcfast": ("ifcfast",), "IfcOpenShell": ("ifcopenshell",),
                "Both": ("ifcfast", "ifcopenshell")}
 
 tab_view, tab_code = st.tabs(["🧱  Viewer", "🐍  Extraction code"])
+
+_DISCLAIMER = "⚠️ IfcFast is an early-stage concept under active development — expect deviations and errors in quantities. Always verify quantities in your trusted takeoff tool!"
 
 with tab_view:
  hero_slot = st.container()
@@ -153,6 +155,8 @@ window.parent.__tabPaint=setInterval(paint,200); paint();
         if min(a, b) > 0:
             st.success(f"⚡ **{ENGINE_LABEL[fast_e]}** was **{max(a, b)/min(a, b):.1f}× faster** "
                        f"on the same geometry. Toggle any card between engines to compare.")
+
+    st.warning(_DISCLAIMER)
 
     st.markdown("<div style='height:.6rem'></div>", unsafe_allow_html=True)
     components.html(html, height=1040, scrolling=True)
