@@ -1,0 +1,3 @@
+ifcfast
+numpy
+streamlit

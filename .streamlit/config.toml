@@ -1,0 +1,10 @@
+# Force light theme so widgets match the beige/green design regardless of the user's OS theme.
+[theme]
+base = "light"
+primaryColor = "#2d4a3e"
+backgroundColor = "#f1efe9"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#334155"
+
+[browser]
+gatherUsageStats = false
